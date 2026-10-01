@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:8000/dashboard.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GateFlow-AI | Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./GateFlow-AI _ Dashboard_files/css2" rel="stylesheet">
+<link rel="stylesheet" href="./GateFlow-AI _ Dashboard_files/style.css">
+<link rel="stylesheet" href="./GateFlow-AI _ Dashboard_files/dashboard-theme.css">
+</head>
+<body class="app-theme dashboard-shell">
+<aside class="sidebar dashboard-sidebar">
+    <div class="brand">
+        <div class="brand-icon" aria-hidden="true">⌁</div>
+        <div><strong>GateFlow-<span>AI</span></strong><small>CAMPUS VEHICLE SECURITY</small></div>
+        <button class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="app-navigation">☰</button>
+    </div>
+
+        <nav id="app-navigation" aria-label="Main navigation">
+        <a href="http://127.0.0.1:8000/dashboard.php#overview" class="active" aria-current="page"><span>⌂</span>Dashboard</a>
+        <a href="http://127.0.0.1:8000/camera.php" class=""><span>▣</span>Live Monitoring</a>
+        <a href="http://127.0.0.1:8000/vehicles.php" class=""><span>▰</span>Vehicles</a>
+        <a href="http://127.0.0.1:8000/entry_exit.php" class=""><span>⇥</span>Entry / Exit</a>
+        <a href="http://127.0.0.1:8000/anpr.php" class=""><span>⛶</span>ANPR</a>
+        <a href="http://127.0.0.1:8000/crowd_monitoring.php" class=""><span>♧</span>Crowd Monitoring</a>
+        <a href="http://127.0.0.1:8000/alerts.php" class=""><span>♟</span>Alerts</a>
+        <a href="http://127.0.0.1:8000/reports.php" class=""><span>▥</span>Reports</a>
+        <a href="http://127.0.0.1:8000/users.php" class=""><span>♙</span>Users</a>
+        <a href="http://127.0.0.1:8000/settings.php" class=""><span>⚙</span>Settings</a>
+    </nav>
+    <div class="sidebar-system"><span class="system-pulse"></span><span><strong>System Online</strong><small>All systems operational</small></span></div>
+</aside>
+<script>
+(() => {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const resetModuleScroll = () => {
+        if (!window.location.hash) window.scrollTo(0, 0);
+    };
+    window.addEventListener('pageshow', resetModuleScroll);
+
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    const toggle = sidebar?.querySelector('.sidebar-toggle');
+    if (!sidebar || !toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    sidebar.querySelectorAll('nav a').forEach((link) => link.addEventListener('click', () => {
+        sidebar.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+    }));
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            sidebar.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Open navigation');
+        }
+    });
+})();
+</script>
+<main class="main-content dashboard-page" id="overview">
+    <header class="dashboard-topbar">
+        <form class="dashboard-search" action="http://127.0.0.1:8000/vehicles.php" method="get" role="search">
+            <span aria-hidden="true">⌕</span><input type="search" name="search" placeholder="Search plate, owner, or vehicle type…" aria-label="Search vehicles">
+        </form>
+        <div class="topbar-tools">
+            <span class="theme-pill" aria-label="Dark theme">☼ <span></span> ☾</span>
+            <a class="notification-button" href="http://127.0.0.1:8000/alerts.php" aria-label="View alerts">♟<i>1</i></a>
+            <div class="user-menu"><span class="user-avatar">H</span><span><strong>Harshitha</strong><small>Admin</small></span><span class="user-chevron">⌄</span></div>
+        </div>
+    </header>
+
+    <section class="welcome-hero" aria-label="Campus overview">
+        <div class="welcome-copy">
+            <p>Good Morning,</p>
+            <h1>Harshitha <span aria-hidden="true">👋</span></h1>
+            <p class="welcome-subtitle">GateFlow-AI keeps our campus safe with<br>AI-powered vehicle monitoring.</p>
+            <div class="date-chip"><span class="calendar-icon">▦</span><span><small>Mon, 28 Sep 2026</small><strong>08:41 AM</strong></span></div>
+        </div>
+    </section>
+
+    <section class="dashboard-metrics" aria-label="Campus activity metrics">
+        <article class="metric-card metric-vehicles"><span class="metric-icon">▰</span><div><span class="metric-label">Total Vehicles</span><strong>3</strong><small>Registered in system</small></div><svg class="sparkline" viewBox="0 0 80 30" aria-hidden="true"><path d="M2 23 C12 20 13 8 22 15 S34 23 42 12 52 7 59 16 68 20 78 5"></path></svg></article>
+        <article class="metric-card metric-inside"><span class="metric-icon">⇥</span><div><span class="metric-label">Vehicles Inside</span><strong>1</strong><small>Currently on campus</small></div><svg class="sparkline" viewBox="0 0 80 30" aria-hidden="true"><path d="M2 22 C12 24 15 5 23 12 S36 25 43 17 52 8 60 13 71 17 78 4"></path></svg></article>
+        <article class="metric-card metric-exited"><span class="metric-icon">⇤</span><div><span class="metric-label">Vehicles Exited</span><strong>0</strong><small>Recorded exits</small></div><svg class="sparkline" viewBox="0 0 80 30" aria-hidden="true"><path d="M2 8 C12 14 15 26 24 19 S36 7 45 16 54 25 61 12 71 9 78 20"></path></svg></article>
+        <article class="metric-card metric-alerts"><span class="metric-icon">♟</span><div><span class="metric-label">Active Alerts</span><strong>1</strong><small>Requires attention</small></div><svg class="sparkline" viewBox="0 0 80 30" aria-hidden="true"><path d="M2 23 C12 21 14 16 22 18 S34 24 41 12 52 15 60 9 70 12 78 4"></path></svg></article>
+    </section>
+
+    <section class="dashboard-middle">
+        <article class="dashboard-card activity-card">
+            <div class="card-heading"><h2>Recent Entry / Exit</h2><a href="http://127.0.0.1:8000/entry_exit.php">View All <span>→</span></a></div>
+            <div class="dashboard-table-wrap"><table class="dashboard-table">
+                <thead><tr><th>#</th><th>Number Plate</th><th>Vehicle Type</th><th>Entry/Exit</th><th>Time</th><th>Status</th></tr></thead>
+                <tbody>
+                                    <tr><td class="row-number">01</td><td class="plate-cell">TS09AB1234</td><td><span class="vehicle-type-icon">▰</span> Car</td><td><span class="movement-pill movement-entry">↪ Entry</span></td><td>11:03 AM</td><td><span class="state-pill state-inside"><i></i>Inside</span></td></tr>
+                                </tbody>
+            </table></div>
+        </article>
+
+        <article class="dashboard-card camera-card">
+            <div class="card-heading"><h2>Live Camera Feed</h2><a href="http://127.0.0.1:8000/camera.php">⛶ &nbsp;Full Screen</a></div>
+            <a class="camera-preview" href="http://127.0.0.1:8000/camera.php" aria-label="Open CCTV monitoring"><span class="live-badge"><i></i> LIVE</span><span class="plate-detection">TS 09 AB 1234</span><span class="scan-frame" aria-hidden="true"></span><span class="camera-placeholder-label">CAMERA PREVIEW · CONNECT A LIVE FEED</span></a>
+            <div class="camera-caption"><strong>▧ &nbsp;Gate Camera 01</strong><span>08:41:01 AM</span></div>
+        </article>
+    </section>
+
+    <section class="dashboard-bottom">
+        <article class="dashboard-card distribution-card">
+            <div class="card-heading"><h2>Vehicle Type Distribution</h2><a href="http://127.0.0.1:8000/vehicles.php">View fleet →</a></div>
+                                    <div class="distribution-content"><div class="donut-chart" style="--donut: #3465f5 0% 67%, #168df5 67% 100%"><span>3<small>vehicles</small></span></div><ul class="legend-list">
+                <li><i style="--legend-color:#3465f5"></i><span>Car</span><strong>67%</strong></li><li><i style="--legend-color:#168df5"></i><span>Bike</span><strong>33%</strong></li>                            </ul></div>
+        </article>
+
+        <article class="dashboard-card chart-card">
+            <div class="card-heading"><h2>Entry vs Exit (Today)</h2><div class="chart-legend"><span><i></i> Entry</span><span><i></i> Exit</span></div></div>
+            <div class="bar-chart" role="img" aria-label="Today's vehicle movement by time of day">
+                <div class="chart-y-labels"><span>1</span><span>1</span><span>1</span><span>0</span></div>
+                <div class="chart-plot"><div class="chart-gridlines"><i></i><i></i><i></i><i></i></div><div class="bar-groups">
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>8 AM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>10 AM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>12 PM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>2 PM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>4 PM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>6 PM</small></div>
+                                    </div></div>
+            </div>
+        </article>
+
+        <article class="dashboard-card alerts-card">
+            <div class="card-heading"><h2>Alerts</h2><a href="http://127.0.0.1:8000/alerts.php">View All →</a></div>
+            <div class="alert-list">
+                                    <a class="alert-row" href="http://127.0.0.1:8000/alerts.php"><span class="alert-thumb">⚠</span><span class="alert-copy"><strong>Unauthorized Vehicle</strong><small>TS11EF9012 · 11:03 AM</small></span><span class="alert-tag alert-high">High</span></a>
+                            </div>
+        </article>
+    </section>
+</main>
+
+
+<span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span></body></html>
