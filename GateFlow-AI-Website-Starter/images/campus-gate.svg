@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="500" viewBox="0 0 1800 500" fill="none">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#172944"/><stop offset=".48" stop-color="#68718c"/><stop offset=".7" stop-color="#e8a86d"/><stop offset="1" stop-color="#26364c"/></linearGradient>
+    <linearGradient id="road" x2="0" y2="1"><stop stop-color="#5d6070"/><stop offset="1" stop-color="#111a28"/></linearGradient>
+    <linearGradient id="gate" x2="0" y2="1"><stop stop-color="#c3b29d"/><stop offset="1" stop-color="#625b59"/></linearGradient>
+    <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#23364d"/><stop offset="1" stop-color="#101e31"/></linearGradient>
+    <linearGradient id="headlight" x2="1"><stop stop-color="#fff4bd" stop-opacity=".7"/><stop offset="1" stop-color="#fff4bd" stop-opacity="0"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="1800" height="500" fill="url(#sky)"/>
+  <circle cx="1070" cy="205" r="95" fill="#ffc27f" opacity=".18" filter="url(#glow)"/>
+  <path d="M0 245 85 195l62 31 82-112 69 93 69-43 82 82h136l52-55 71 45 49-139 66 99 62-52 70 80 74-93 89 81 52-51 74 48 68-77 88 78 80-28 101 74v110H0z" fill="#17283b" opacity=".92"/>
+  <g fill="#23364b"><path d="M408 94h52v149h-52zM467 61h30v182h-30zM505 112h67v131h-67zM587 82h42v161h-42zM643 119h58v124h-58zM1215 96h75v148h-75zM1300 54h35v190h-35zM1346 83h68v161h-68zM1424 119h45v125h-45zM1483 68h83v176h-83zM1576 103h38v141h-38z"/></g>
+  <g fill="#edba83" opacity=".5"><path d="M420 116h9v12h-9zm20 0h9v12h-9zm-20 25h9v12h-9zm20 0h9v12h-9zm70-41h8v11h-8zm19 0h8v11h-8zm-19 23h8v11h-8zm19 0h8v11h-8zm86-21h8v11h-8zm18 0h8v11h-8zm-18 24h8v11h-8zm18 0h8v11h-8zm588-5h9v12h-9zm20 0h9v12h-9zm-20 25h9v12h-9zm20 0h9v12h-9zm-93-50h9v12h-9zm20 0h9v12h-9zm-20 23h9v12h-9zm20 0h9v12h-9zm164 26h9v12h-9zm20 0h9v12h-9zm-20 24h9v12h-9zm20 0h9v12h-9z"/></g>
+  <path d="M0 246h1800v37H0z" fill="#263648"/>
+  <path d="M0 278h1800v222H0z" fill="url(#road)"/>
+  <path d="M695 500 845 278h190l255 222z" fill="#192433" opacity=".64"/>
+  <path d="M882 315h16l-16 44h-16zm-37 92h15l-23 54h-16zm101-92h16l20 44h-16zm39 92h16l28 54h-17z" fill="#d8cdb0" opacity=".45"/>
+  <g fill="#101b28"><path d="M674 133h55v145h-55zM667 123h68v13h-68zM1062 121h61v157h-61zM1056 111h73v13h-73z"/><path d="M666 172h76v7h-76zm0 37h76v7h-76zm389-37h78v7h-78zm0 37h78v7h-78z" fill="#d9b786" opacity=".7"/><path d="M732 140h18v138h-18zm-58 0h18v138h-18zm391-2h18v140h-18zm58 0h18v140h-18z" fill="url(#gate)"/></g>
+  <path d="M642 124h443v14H642z" fill="#d0bea6"/><path d="M652 121h423v5H652z" fill="#f1c88d" opacity=".8"/>
+  <g fill="#101c2b"><path d="M82 171h8v117h-8zm24-31h7v148h-7zm81 46h7v101h-7zm151-38h8v140h-8zm117 16h7v122h-7zm120-32h8v154h-8zm680 25h8v129h-8zm141-31h7v160h-7zm87 52h7v108h-7zm110-23h8v131h-8zm103 8h7v123h-7z"/></g>
+  <g fill="#43705d"><circle cx="83" cy="169" r="35"/><circle cx="108" cy="151" r="31"/><circle cx="190" cy="185" r="36"/><circle cx="357" cy="147" r="41"/><circle cx="479" cy="164" r="32"/><circle cx="588" cy="129" r="38"/><circle cx="1214" cy="162" r="33"/><circle cx="1374" cy="136" r="42"/><circle cx="1460" cy="178" r="32"/><circle cx="1593" cy="151" r="40"/><circle cx="1710" cy="171" r="37"/></g>
+  <g fill="#71906a" opacity=".7"><circle cx="69" cy="151" r="17"/><circle cx="115" cy="139" r="15"/><circle cx="182" cy="168" r="17"/><circle cx="354" cy="126" r="19"/><circle cx="475" cy="148" r="15"/><circle cx="588" cy="108" r="18"/><circle cx="1215" cy="147" r="15"/><circle cx="1377" cy="112" r="20"/><circle cx="1454" cy="160" r="15"/><circle cx="1590" cy="130" r="19"/><circle cx="1711" cy="151" r="17"/></g>
+  <g fill="#ffcf83" opacity=".85"><circle cx="41" cy="278" r="4"/><circle cx="130" cy="278" r="3"/><circle cx="208" cy="278" r="4"/><circle cx="336" cy="278" r="3"/><circle cx="483" cy="278" r="4"/><circle cx="588" cy="278" r="3"/><circle cx="1204" cy="278" r="4"/><circle cx="1320" cy="278" r="3"/><circle cx="1493" cy="278" r="4"/><circle cx="1610" cy="278" r="3"/><circle cx="1746" cy="278" r="4"/></g>
+  <g aria-label="NMIMS Hyderabad campus entrance">
+    <rect x="766" y="143" width="213" height="51" rx="3" fill="#e7e0d4" stroke="#b89c73" stroke-width="2"/>
+    <rect x="773" y="149" width="199" height="39" rx="2" fill="#172944"/>
+    <path d="M788 158h17v19h-17z" fill="#d2b273"/>
+    <path d="m791 161 5.5 4 5.5-4v13l-5.5-3.6-5.5 3.6z" fill="#172944"/>
+    <text x="878" y="169" fill="#fff8e8" font-family="Georgia,serif" font-size="21" font-weight="700" letter-spacing="1.4" text-anchor="middle">NMIMS</text>
+    <text x="878" y="182" fill="#e8c77f" font-family="Arial,sans-serif" font-size="7" font-weight="700" letter-spacing="3" text-anchor="middle">HYDERABAD</text>
+  </g>
+  <g transform="translate(835 260)"><ellipse cx="132" cy="74" rx="157" ry="18" fill="#070e17" opacity=".7"/><path d="m33 56 15-35q7-17 25-20h107q20 3 28 21l16 34 24 8 8 20v15H8V76l7-14z" fill="#26384f"/><path d="m67 25 12-17q4-6 13-6h82q10 2 14 10l12 23z" fill="url(#glass)"/><path d="m107 6-4 29h-32l12-17q5-10 13-12zm10 0h54q9 2 14 10l11 19h-78z" fill="#71849a" opacity=".76"/><path d="m31 54 14-20 22-4-10 28zm172-24 19 7 14 20-35 1z" fill="#32475f"/><path d="M15 63h26v9H13zm214 0h22v9h-22z" fill="#f9d89a"/><path d="M22 64h28v4H19zm196 0h28v4h-28z" fill="url(#headlight)"/><path d="M82 68h114v19H82z" fill="#c8d4df"/><path d="M96 71h85v12H96z" fill="#f4f5f3"/><text x="138" y="80" fill="#172235" font-family="Arial,sans-serif" font-size="9" font-weight="700" text-anchor="middle">CAMPUS</text><circle cx="55" cy="88" r="17" fill="#090e15"/><circle cx="55" cy="88" r="9" fill="#657386"/><circle cx="205" cy="88" r="17" fill="#090e15"/><circle cx="205" cy="88" r="9" fill="#657386"/></g>
+  <path d="M0 0h1800v500H0z" fill="url(#sky)" opacity=".06"/>
+</svg>
