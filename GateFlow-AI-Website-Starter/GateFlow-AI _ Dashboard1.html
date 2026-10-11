@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:8000/dashboard.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GateFlow-AI | Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./GateFlow-AI _ Dashboard1_files/css2" rel="stylesheet">
+<link rel="stylesheet" href="./GateFlow-AI _ Dashboard1_files/style.css">
+<link rel="stylesheet" href="./GateFlow-AI _ Dashboard1_files/dashboard-theme.css">
+<link rel="stylesheet" href="./GateFlow-AI _ Dashboard1_files/light-theme.css">
+</head>
+<body class="app-theme dashboard-shell">
+<aside class="sidebar dashboard-sidebar">
+    <div class="brand">
+        <div class="brand-icon" aria-hidden="true">⌁</div>
+        <div><strong>GateFlow-<span>AI</span></strong><small>CAMPUS VEHICLE SECURITY</small></div>
+        <button class="sidebar-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="app-navigation">☰</button>
+    </div>
+
+        <nav id="app-navigation" aria-label="Main navigation">
+        <a href="http://127.0.0.1:8000/dashboard.php#overview" class="active" aria-current="page"><span>⌂</span>Dashboard</a>
+        <a href="http://127.0.0.1:8000/camera.php" class=""><span>▣</span>Live Monitoring</a>
+        <a href="http://127.0.0.1:8000/vehicles.php" class=""><span>▰</span>Vehicles</a>
+        <a href="http://127.0.0.1:8000/entry_exit.php" class=""><span>⇥</span>Entry / Exit</a>
+        <a href="http://127.0.0.1:8000/anpr.php" class=""><span>⛶</span>ANPR</a>
+        <a href="http://127.0.0.1:8000/crowd_monitoring.php" class=""><span>♧</span>Crowd Monitoring</a>
+        <a href="http://127.0.0.1:8000/alerts.php" class=""><span>♟</span>Alerts</a>
+        <a href="http://127.0.0.1:8000/reports.php" class=""><span>▥</span>Reports</a>
+        <a href="http://127.0.0.1:8000/users.php" class=""><span>♙</span>Users</a>
+        <a href="http://127.0.0.1:8000/settings.php" class=""><span>⚙</span>Settings</a>
+    </nav>
+    <div class="sidebar-system"><span class="system-pulse"></span><span><strong>Database Online</strong><small>Camera &amp; gate integration pending</small></span></div>
+</aside>
+<script>
+(() => {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const resetModuleScroll = () => {
+        if (!window.location.hash) window.scrollTo(0, 0);
+    };
+    window.addEventListener('pageshow', resetModuleScroll);
+
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    const toggle = sidebar?.querySelector('.sidebar-toggle');
+    if (!sidebar || !toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    sidebar.querySelectorAll('nav a').forEach((link) => link.addEventListener('click', () => {
+        sidebar.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+    }));
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            sidebar.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Open navigation');
+        }
+    });
+})();
+</script>
+<main class="main-content dashboard-page" id="overview">
+    <header class="dashboard-topbar">
+        <form class="dashboard-search" action="http://127.0.0.1:8000/vehicles.php" method="get" role="search">
+            <span aria-hidden="true">⌕</span><input type="search" name="search" placeholder="Search plate, owner, or vehicle type…" aria-label="Search vehicles">
+        </form>
+        <div class="topbar-tools">
+            <span class="theme-pill" aria-label="Dark theme">☼ <span></span> ☾</span>
+            <a class="notification-button" href="http://127.0.0.1:8000/alerts.php" aria-label="View alerts">♟<i>1</i></a>
+            <div class="user-menu"><span class="user-avatar">H</span><span><strong>Harshitha</strong><small>Admin</small></span><span class="user-chevron">⌄</span></div>
+        </div>
+    </header>
+    <section class="welcome-hero" aria-label="Campus overview">
+        <div class="welcome-copy">
+            <p>Good Morning,</p>
+            <h1>Harshitha <span aria-hidden="true">👋</span></h1>
+            <p class="welcome-subtitle">GateFlow-AI keeps our campus safe with<br>AI-powered vehicle monitoring.</p>
+            <div class="date-chip" data-live-clock="" data-timezone="Asia/Kolkata"><span class="calendar-icon">▦</span><span><small data-clock-date="">Mon, 12 Oct, 2026</small><strong data-clock-time="">12:11:53 am</strong></span></div>
+        </div>
+    </section>
+    <section class="dashboard-metrics" aria-label="Campus activity metrics">
+        <article class="metric-card metric-vehicles"><span class="metric-icon">▰</span><div><span class="metric-label">Total Vehicles</span><strong>4</strong><small>Registered in system</small></div></article>
+        <article class="metric-card metric-inside"><span class="metric-icon">⇥</span><div><span class="metric-label">Vehicles Inside</span><strong>0</strong><small>Currently on campus</small></div></article>
+        <article class="metric-card metric-exited"><span class="metric-icon">⇤</span><div><span class="metric-label">Vehicles Exited Today</span><strong>0</strong><small>Recorded exits</small></div></article>
+        <article class="metric-card metric-alerts"><span class="metric-icon">♟</span><div><span class="metric-label">Active Alerts</span><strong>1</strong><small>Requires attention</small></div></article>
+    </section>
+    <section class="dashboard-middle">
+        <article class="dashboard-card activity-card">
+            <div class="card-heading"><h2>Recent Entry / Exit</h2><a href="http://127.0.0.1:8000/entry_exit.php">View All <span>→</span></a></div>
+            <div class="dashboard-table-wrap"><table class="dashboard-table">
+                <thead><tr><th>#</th><th>Number Plate</th><th>Vehicle Type</th><th>Entry/Exit</th><th>Time</th><th>Status</th></tr></thead>
+                <tbody>
+                                    <tr><td class="row-number">01</td><td class="plate-cell">TS09KA0555</td><td><span class="vehicle-type-icon">▰</span> Car</td><td><span class="movement-pill movement-exit">↩ Exit</span></td><td>07:11 PM</td><td><span class="state-pill state-exited"><i></i>Exited</span></td></tr>
+                                    <tr><td class="row-number">02</td><td class="plate-cell">TS09KA0555</td><td><span class="vehicle-type-icon">▰</span> Car</td><td><span class="movement-pill movement-exit">↩ Exit</span></td><td>07:10 PM</td><td><span class="state-pill state-exited"><i></i>Exited</span></td></tr>
+                                    <tr><td class="row-number">03</td><td class="plate-cell">TS09AB1234</td><td><span class="vehicle-type-icon">▰</span> Car</td><td><span class="movement-pill movement-exit">↩ Exit</span></td><td>01:44 PM</td><td><span class="state-pill state-exited"><i></i>Exited</span></td></tr>
+                                </tbody>
+            </table></div>
+        </article>
+        <article class="dashboard-card camera-card">
+            <div class="card-heading camera-card-heading"><div><h2>Campus Entrance</h2><small>Live Camera Feed</small></div><a href="http://127.0.0.1:8000/camera.php">⛶ Full Screen</a></div>
+            <div class="camera-preview" id="dashboard-camera-preview">
+                <video id="dashboard-camera-video" autoplay="" muted="" playsinline="" hidden=""></video>
+                <span class="campus-photo-badge">PHOTO</span>
+                <span class="camera-feed-status" id="dashboard-camera-status"><i></i> NOT CONNECTED</span>
+                <span class="plate-detection">LAST MOVEMENT · TS09KA0555</span>
+                <span class="scan-frame" aria-hidden="true"></span>
+                <span class="camera-placeholder-icon" id="dashboard-camera-icon" aria-hidden="true" hidden="">▣</span>
+                <strong class="camera-placeholder-title" id="dashboard-camera-title" hidden="">Camera not connected</strong>
+                <span class="camera-placeholder-label" id="dashboard-camera-message" role="status">CAMERA PREVIEW · CONNECT A LIVE FEED</span>
+                <button class="camera-connect-button" id="dashboard-camera-connect" type="button">Connect device camera</button>
+            </div>
+            <div class="camera-caption"><strong>▧ &nbsp;Gate Camera 01</strong><span id="dashboard-camera-caption">12:00:31 AM</span></div>
+        </article>
+    </section>
+    <section class="dashboard-bottom">
+        <article class="dashboard-card distribution-card">
+            <div class="card-heading"><h2>Vehicle Type Distribution</h2><a href="http://127.0.0.1:8000/vehicles.php">View fleet →</a></div>
+                                    <div class="distribution-content"><div class="donut-chart" style="--donut: #3465f5 0% 75%, #168df5 75% 100%"><span>4<small>vehicles</small></span></div><ul class="legend-list">
+                <li><i style="--legend-color:#3465f5"></i><span>Car</span><strong>75%</strong></li><li><i style="--legend-color:#168df5"></i><span>Bike</span><strong>25%</strong></li>                            </ul></div>
+        </article>
+        <article class="dashboard-card chart-card">
+            <div class="card-heading"><h2>Entry vs Exit (Today)</h2><div class="chart-legend"><span><i></i> Entry</span><span><i></i> Exit</span></div></div>
+            <div class="bar-chart" role="img" aria-label="Today's vehicle movement by time of day">
+                <div class="chart-y-labels"><span>1</span><span>1</span><span>1</span><span>0</span></div>
+                <div class="chart-plot"><div class="chart-gridlines"><i></i><i></i><i></i><i></i></div><div class="bar-groups">
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>8 AM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>10 AM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>12 PM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>2 PM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>4 PM</small></div>
+                                        <div class="bar-group"><div class="bars"><i class="bar-entry" style="height:3%" title="0 entries"></i><i class="bar-exit" style="height:3%" title="0 exits"></i></div><small>6 PM</small></div>
+                                    </div></div>
+            </div>
+        </article>
+        <article class="dashboard-card alerts-card">
+            <div class="card-heading"><h2>Alerts</h2><a href="http://127.0.0.1:8000/alerts.php">View All →</a></div>
+            <div class="alert-list">
+                                    <a class="alert-row" href="http://127.0.0.1:8000/alerts.php"><span class="alert-thumb">⚠</span><span class="alert-copy"><strong>Unauthorized Vehicle</strong><small>TS11EF9012 · 11:03 AM</small></span><span class="alert-tag alert-high">High</span></a>
+                            </div>
+        </article>
+    </section>
+</main>
+<script>
+(() => {
+    const video = document.getElementById('dashboard-camera-video');
+    const connectButton = document.getElementById('dashboard-camera-connect');
+    const status = document.getElementById('dashboard-camera-status');
+    const icon = document.getElementById('dashboard-camera-icon');
+    const title = document.getElementById('dashboard-camera-title');
+    const message = document.getElementById('dashboard-camera-message');
+    const caption = document.getElementById('dashboard-camera-caption');
+    let cameraStream = null;
+    const stopCamera = () => {
+        cameraStream?.getTracks().forEach(track => track.stop());
+        cameraStream = null;
+        if (!video) return;
+        video.srcObject = null;
+        video.hidden = true;
+        status.classList.remove('camera-connected');
+        status.innerHTML = '<i></i> NOT CONNECTED';
+        icon.hidden = false;
+        title.hidden = false;
+        message.hidden = false;
+        message.textContent = 'Allow camera access to preview this device’s camera';
+        connectButton.textContent = 'Connect device camera';
+        caption.textContent = 'Waiting for permission';
+    };
+    connectButton?.addEventListener('click', async () => {
+        if (cameraStream) {
+            stopCamera();
+            return;
+        }
+        if (!navigator.mediaDevices?.getUserMedia) {
+            message.textContent = 'Camera preview needs a supported browser on localhost or HTTPS.';
+            return;
+        }
+        connectButton.disabled = true;
+        connectButton.textContent = 'Requesting permission…';
+        try {
+            cameraStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+            video.srcObject = cameraStream;
+            video.hidden = false;
+            status.classList.add('camera-connected');
+            status.innerHTML = '<i></i> LIVE PREVIEW';
+            icon.hidden = true;
+            title.hidden = true;
+            message.hidden = true;
+            connectButton.textContent = 'Stop camera';
+            connectButton.disabled = false;
+            caption.textContent = 'Device camera · preview only';
+        } catch (error) {
+            status.classList.remove('camera-connected');
+            status.innerHTML = '<i></i> NOT CONNECTED';
+            const messages = {
+                NotAllowedError: 'Camera permission was denied. Allow access in the browser address bar and retry.',
+                NotFoundError: 'No camera was found on this device.',
+                NotReadableError: 'The camera is busy in another application.'
+            };
+            message.textContent = messages[error.name] || 'Could not open the camera. Check the device and browser permissions.';
+            connectButton.textContent = 'Try again';
+            connectButton.disabled = false;
+        }
+    });
+    window.addEventListener('pagehide', stopCamera);
+    const clock = document.querySelector('[data-live-clock]');
+    if (!clock) return;
+    const dateOutput = clock.querySelector('[data-clock-date]');
+    const timeOutput = clock.querySelector('[data-clock-time]');
+    const timezone = clock.dataset.timezone || undefined;
+    const dateFormatter = new Intl.DateTimeFormat('en-IN', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', timeZone: timezone });
+    const timeFormatter = new Intl.DateTimeFormat('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: timezone });
+    const updateClock = () => {
+        const now = new Date();
+        dateOutput.textContent = dateFormatter.format(now);
+        timeOutput.textContent = timeFormatter.format(now);
+    };
+    updateClock();
+    window.setInterval(updateClock, 1000);
+})();
+</script>
+
+<span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span></body></html>
